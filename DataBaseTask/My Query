@@ -1,0 +1,10 @@
+SELECT 
+    cust.cust_name as "Customer Name",
+    cust.city as "Customer City",
+    sales.name as "Salesman",
+    sales.city as "Salesman City",
+    sales.commission as "Commission"
+FROM customer cust
+inner JOIN salesman sales ON cust.salesman_id = sales.salesman_id
+WHERE cust.city <> sales.city
+AND sales.commission > 0.12;
